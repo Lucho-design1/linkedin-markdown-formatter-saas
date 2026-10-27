@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown to LinkedIn Formatter - Pro Tool</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f4f6f8; color: #333; }
+        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        textarea { width: 100%; height: 180px; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-family: monospace; font-size: 14px; margin-top: 10px; }
+        button { background: #0a66c2; color: white; border: none; padding: 12px 20px; font-size: 16px; border-radius: 6px; cursor: pointer; margin-top: 15px; font-weight: bold; }
+        button:hover { background: #004182; }
+        .pricing { margin-top: 30px; padding: 20px; background: #eef3f8; border-radius: 8px; border-left: 5px solid #0a66c2; }
+        .btn-pay { display: inline-block; background: #0070ba; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🚀 Markdown to LinkedIn Formatter</h1>
+        <p>Convierte tus notas técnicas y Markdown en publicaciones optimizadas para el feed de LinkedIn en segundos.</p>
+        <label for="inputMd">Pega tu texto en Markdown aquí:</label>
+        <textarea id="inputMd" placeholder="# Mi gran proyecto..."></textarea>
+        <button onclick="formatText()">Formatear para LinkedIn</button>
+        
+        <h3>Resultado optimizado:</h3>
+        <textarea id="outputMd" readonly placeholder="El resultado aparecerá aquí..."></textarea>
+
+        <div class="pricing">
+            <h3>☕ Apoya este Micro-SaaS</h3>
+            <p>¿Te ahorró tiempo? Haz una contribución voluntaria o adquiere la versión Pro por solo <strong>$5.00 USD</strong>.</p>
+            <a class="btn-pay" href="https://paypal.me/lucianobenech/5" target="_blank">Pagar $5 USD vía PayPal</a>
+            <p style="margin-top: 10px; font-size: 13px;">USDT (TRC20 / Polygon): <code>TYndYVBb42q6U79tCm3VQzzhv2FtwAndhc</code></p>
+        </div>
+    </div>
+    <script>
+        function formatText() {
+            let text = document.getElementById('inputMd').value;
+            let formatted = text.replace(/^# (.*$)/gm, '🔥 $1 🔥\n================\n')
+                                .replace(/^## (.*$)/gm, '\n👉 $1\n----------------')
+                                .replace(/\*\*(.*?)\*\*/g, '👉 $1');
+            document.getElementById('outputMd').value = formatted + '\n\n#Inovación #Tecnología #Desarrollo';
+        }
+    </script>
+</body>
+</html>
